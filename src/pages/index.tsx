@@ -1,4 +1,5 @@
 import ChooseCategory from '@/components/ChooseCategory';
+import { ChooseCategoryContextProvider } from '@/components/ChooseCategoryContext';
 import ChoosePlaylist from '@/components/ChoosePlaylist';
 import ChooseTracks from '@/components/ChooseTracks';
 import Header from '@/components/Header';
@@ -12,9 +13,11 @@ const Home: React.FC = () => {
     >
       <Header/>
       <section className='flex justify-center gap-10 py-10'>
-        <ChooseCategory/>
-        <ChoosePlaylist/>
-        <ChooseTracks/>
+        <ChooseCategoryContextProvider>
+          <ChooseCategory/>
+        </ChooseCategoryContextProvider>
+        {/* <ChoosePlaylist/>
+        <ChooseTracks/> */}
       </section>
     </main>
   )

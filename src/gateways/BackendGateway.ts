@@ -1,4 +1,4 @@
-import { Category } from "@/components/ChooseCategory";
+import { Category } from "@/components/ChooseCategoryContext";
 
 type CategoriesResponse = {
   categories: {
