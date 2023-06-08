@@ -1,5 +1,4 @@
 import SpotifyTokenSingleton from "./SpotifyTokenSingleton";
-
 export class SpotifyGateway {
   static async login(): Promise<string> {
     const spotifyAuthUrl = 'https://accounts.spotify.com/api/token';
@@ -25,6 +24,7 @@ export class SpotifyGateway {
   static async getCategories() {
     const url = 'https://api.spotify.com/v1/browse/categories?country=BR&locale=pt_BR';
     const response = await SpotifyGateway.fetchWithAuth(url);
+    
     if(!response.ok) {
       throw new Error('Error fetching categories')
     }
